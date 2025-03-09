@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Design | By Code Info</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="/asset/css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/asset/css/Admin.css">
+</head>
+<body>
+    <div class="sidebar">
+<br>
+    <ul class="menu">
+        <div class="my-logo"><img src="/asset/img/family.jpg" alt="logo">
+        </div>
+        <li >
+            <a href="#">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>Dashboard </span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span>Graguate</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <span>Undergraduate</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <span>Statistics</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li class="logout">
+            <a href="logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+    </div>
+
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="search--box">
+                <input type="text" id="searchbox" placeholder="Search for..."/>
+                <button class="searchBtn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+                <span>Home</span>
+            <div class="user--info">
+             <div class="nitif-box">
+                <i class="fa fa-bell-o" aria-hidden="true" style="cursor: pointer;">
+                    <span class="spaner">3</span>
+                </i>
+            </div>
+                <img src="/asset/img/icon/bxs-user.svg" alt="profile">
+            </div>
+    </div>
+
+  <!-- ***** tabular section 1 ***** -->
+    <div class="tabular-wrapper">
+        <!-- <?php
+        if(isset($_SESSION["msg"]) && !empty($_SESSION["msg"])){
+           $msg = $_SESSION["msg"];
+           echo "<div class='msgbox alert alert-success p-1 text-center m-0' style='background-color:#9bffbbfa; width: 300px; heigth: 30px;'>".$msg."</div>";
+           unset($_SESSION['msg']);
+        }
+       ?> -->
+       <div class="main-title">
+            <h3>ADD DATA</h3>
+            <button type="button" class="fa fa-plus"></button>
+       </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">field of study</th>
+                        <th scope="col">Internship Type</th>
+                        <th scope="col">Internship Name</th>
+                        <th scope="col">Internship lacation</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aime</td>
+                        <td>673182859</td>
+                        <td>MysternoAime@gmail.com</td>
+                        <td>Male</td>
+                        <td>Damas</td>
+                        <td>Software Engineering</td>
+                        <td>professional</td>
+                        <td>Nextbyte Tech</td>
+                        <td>Yaounde</td>
+                        <td>10th</td>
+                        <td>Password</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr> 
+                </tbody>
+                
+            <?php
+                if($query_run as $row)
+                {
+                     foreach ($professionals as $professional)
+                  {
+            ?>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['fname']; ?></td>
+                            <td><?php echo $row['lname']; ?></td>
+                            <td><?php echo $row['phone']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['address']; ?></td>
+                            <td><?php echo $row['field_of_study']; ?></td>
+                            <td><?php echo $row['intern_location']; ?></td>
+                            <td><?php echo $row['intern_name']; ?></td>
+                            <td><?php echo $row['startdate']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td>here</td>
+                        </tr>
+                    </tbody>
+            <?php
+                }
+            }   
+            else
+            {
+                echo "No record found Available";
+            }
+            ?>
+            </table>
+        </div>
+    </div>
+  <!-- ***** tabular section 1 ***** -->
+
+    </div>
+</body>
+</html>
