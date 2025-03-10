@@ -20,29 +20,31 @@ body{
     bottom: 0;
     width: 110px;
     height: 100vh;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     color: #fff;
     overflow: hidden;
     font-family: "Roboto", sans-serif;
     transition: all 0.5s linear;
-    background: #006CF4;
+    background: #3b3c3c;
+  /* background: #2d89fb;*/
+ /* background: #23a2f7;*/
 }
 .sidebar:hover {
     width: 285px;
     transition: 0.5s;
 }
 
-.my-logo img{
+.my-logo{
  width: 80px;
  height: 80px;
- border-radius: 15px;
- margin: 0 0.5rem 2.5rem -0.75rem;
+ border-radius: 50%;
+ margin: 0 0.5rem 2.5rem -0.45rem;
  cursor: pointer;
-}
-
-.my-logo img:hover{
-    transform: scale(1.5) translatex(55%) translatey(20%);
-    transition: all 0.5s ease-in-out;
+ border: 5px solid rgb(85, 84, 84);
+ background-image: url(/asset/img/spartan.jpg);
+ background-size: contain;
+ background-repeat: no-repeat;
+ transition: all 0.6s ease-in;
 }
 
 .menu{
@@ -53,12 +55,12 @@ body{
 }
 .menu li{
     padding: 1rem;
-    margin: 8px 2px;
+    margin: 8px 1px;
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
 }
 .menu li:hover, .active{
-    background: #e0e0e0b5;
+    background: rgb(379, 09, 4);
 }
 .menu a {
     color: #fff;
@@ -67,12 +69,15 @@ body{
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 1.9rem;
+    gap: 1.3rem;
 }
 .menu a span{
     font-size: 17px;
     overflow: hidden;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 .menu a i{
     font-size: 1.5rem;
@@ -108,18 +113,28 @@ body{
     flex-wrap: wrap;
     background: #ffffff;
     border-radius: 10px;
-    padding: 10px 2rem;
+    padding: 1px 2rem;
     margin-bottom: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
 }
-.header--wrapper span{
-    font-weight: 700;
+
+.header--wrapper a{
+    height: 100px;
+    width: 80px;
+    color: #3b3c3c;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.header--wrapper span:hover{
-    transform: translateY(-16%);
+    text-decoration: none;
+    align-content: center;
+    font-family: 'Days one', serif;
     transition: all 0.6s ease-in-out;
+}
+.header--wrapper a:hover{
+    color: #c13584;
+    transform: scale(1.1);
+    transition: all 0.6s ease-out;
 }
 .user--info{
     display: flex;
@@ -153,16 +168,15 @@ body{
     transition: all 0.5s ease-out;
 }
 
-.spaner{
-    margin: 0;
-    padding: 1px 3px;
-    background-color: red;
-    border-radius: 5px;
+.header--wrapper span{
+    padding: 5px 3.5px;
+    background-color: #ff0000;
+    border-radius: 13px;
     color: #fff;
-    z-index: 5;
+    margin-left: -5px;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
-    font-size: 11px;
-    transform: translate(15%);
+    font-size: 13px;
     text-decoration: none;
 }
 
@@ -180,31 +194,148 @@ body{
 }
 /* ** End of Navigation bar section ** */
 
+/* ***** tabular section 2 ***** */
+.tabular-wrapper2{
+    height: 460px;
+    background: #ffffff;
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px;
+    padding: 1.6rem 1.6rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+.main-title2{
+    height: 400px;
+    width: 46%;
+    padding: 0.4rem 0.2rem 0.5rem 0.2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.089);
+}
+
+/* ***** profile reset section ***** */
+
+.profile-div{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    gap: 1.6rem;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    justify-content: start;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+.profile-div-img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url(/asset/img/car.webp);
+    border: 5px solid #3b3c3c;
+    box-shadow: 0 5px 15px rgba(18, 16, 16, 0.089);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#btn-profile{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background: #3b3c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    background: #ff0000;
+    transform: tranlate(60%, 50%);
+}
+
+.change-profile-div{
+    width: 120px;
+    height: 67px;
+    font-family: "Black Ops one", serif;
+}
+
+.change-profile-div h6{
+    color: #fff;
+    font-size: 1.34rem;
+    background: none;
+    box-shadow: 0 5px 15px rgba(21, 20, 20, 0.089);
+}
+
+.btn-change{
+    padding: 4px 4px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: small;
+    background: #3b3c3cdf;
+    font-family: 'Fredericka the Great', sans-serif;
+}
+.btn-change:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.profile-info{
+    height: 230px;
+    width: 100%;
+    bottom: 0;
+    padding: 7px 2px 4px 2px;
+    display: flex;
+    flex-direction: column;
+}
+.profile-info ul{
+    height: 100px;
+    width: 100%;
+    list-style: none;
+}
+.profile-info ul li{
+    padding: 7px 5px;
+    font-family: 'Days One', sans-serif;
+    line-height: 8px;
+    margin: 11px -20px;
+    font-weight: 500;
+    color: #3b3c3c;
+}
+.profile-info button{
+    transform: translateY(145%);
+    border-radius: 9px;
+    padding: 8px 13px;
+    margin-right: 10px;
+    align-self: self-end;
+    color: #fff;
+    background-color: #2d89fb;
+}
+/* ***** End of profile reset section ***** */
+
+/* ***** End of tabular section 2 ***** */
 
 
-/* ***** tabular section 1 ***** */
-.tabular-wrapper{
+
+/* ***** tabular section 3 ***** */
+.tabular-wrapper3{
     background: #ffffff;
     margin-top: 1rem;
     border-radius: 10px;
     padding: 2rem 0.8rem;
+    overflow-y: scroll !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
 }
-.main-title{
-    color: rgba(113, 99, 186, 255);
-    font-size: 20px;
-    font-weight: bolder;
+.main-title3{
+    /* color: rgba(113, 99, 186, 255); */
+    color: #3b3c3c;
+    font-size: 18px;
     display: flex;
     justify-content: space-between;
     padding: 0 0.3rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Days one', sans-serif;
 }
 
-.main-title button{
-   width: 45px;
-   height: 40px;
+.main-title3 button{
+   width: 35px;
+   height: 35px;
    color: #ffffff;
-   background: #30fe30f9;
+   background: #bec3c9;
    border-radius: 5px;
 }
 
@@ -216,10 +347,10 @@ table{
     border-collapse: collapse;
 }
 thead{
-     background: #006ef4c5; 
+     background: rgba(85, 84, 84, 0.67); 
 }
 th{
-    padding: 8px;
+    padding: 6px;
     text-align: center;
     color: #ffffff;
     justify-content: center;
@@ -232,11 +363,12 @@ tbody{
 td{
     padding: 5px;
     font-size: 13px;
-    color: #333333aa;
+    color: #3b3c3c;
     text-align: start;
     font-weight: 500;
     border: 1px solid rgba(225, 223, 223, 0.478);
     border-radius: 2px;
+    font-family: 'Roboto', serif;
 }
 tr:nth-child(even){
     background: rgba(225, 223, 223, 0.478);
@@ -251,9 +383,122 @@ tr:nth-child(even){
     border-radius: 3px;
 }
 .table-container tr th:first-child{
-    border-radius: 10px 0 0 0;
+    border-radius: 5px 0 0 0;
 }
 .table-container tr th:last-child{
-    border-radius: 0 10px 0 0;
+    border-radius: 0 6px 0 0;
 }
- /* ***** End of tabular section 1 ***** */
+ /* ***** End of tabular section 3 ***** */
+
+
+ /* ***** tabular section 4 ***** */
+ .tabular-wrapper4{
+    background: #ffffff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem 0.8rem;
+    overflow-y: scroll !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+.main-title4{
+    /* color: rgba(113, 99, 186, 255); */
+    color: #3b3c3c;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.3rem;
+    font-family: 'Days one', sans-serif;
+}
+
+.main-title4 button{
+   width: 35px;
+   height: 35px;
+   color: #ffffff;
+   background: #bec3c9;
+   border-radius: 5px;
+}
+
+.table-container4{
+    width: 100%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+     background: rgba(85, 84, 84, 0.67); 
+}
+th{
+    padding: 6px;
+    text-align: center;
+    color: #ffffff;
+    justify-content: center;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+tbody{
+    background: #ffff;
+}
+td{
+    padding: 5px;
+    font-size: 13px;
+    color: #3b3c3c;
+    text-align: start;
+    font-weight: 500;
+    border: 1px solid rgba(225, 223, 223, 0.478);
+    border-radius: 2px;
+}
+tr:nth-child(even){
+    background: rgba(225, 223, 223, 0.478);
+}
+
+.table-container4 button{
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    padding: 3px 5px;
+    background: #006CF4;
+    border-radius: 3px;
+}
+.table-container4 tr th:first-child{
+    border-radius: 5px 0 0 0;
+}
+.table-container4 tr th:last-child{
+    border-radius: 0 6px 0 0;
+}
+/* ***** End of tabular section 4 ***** */
+
+
+
+
+
+/* ***** tabular section 5 ***** */
+.tabular-wrapper5{
+    height: 460px;
+    background: #ffffff;
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px;
+    padding: 1.6rem 1.6rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+.main-title5{
+    height: 400px;
+    width: 50%;
+    padding: 0.7rem 0.5rem 0.8rem 0.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.089);
+}
+
+.main-title5 h3{
+    font-family: 'Days One', sans-serif;
+}
+
+/* ***** End of tabular section 5 ***** */
+
+
+
+/* 
+i need a js code for which when i click on this
+ button element, it can upload and change the background image of the div class ".profile-div-img" and even if the w
+eb page is refreshed, it doesn't affect that background image 
+*/

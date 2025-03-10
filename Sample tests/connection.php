@@ -8,7 +8,7 @@ $dbname = "internship";
 $connecting = new PDO("mysql: host=localhost; dbname=internship", "root", "");
 
  //Prepare
- $connected = $connecting -> prepare("INSERT INTO Students(snames, semail, stel, sgender, speciality) VALUES (:snames, :semail, :stel, :sgender, :speciality)");
+ $connected = $connecting -> prepare("INSERT INTO graduates(snames, semail, stel, sgender, speciality) VALUES (:snames, :semail, :stel, :sgender, :speciality)");
  $connected -> execute(
     [
         "username" => $_POST["username"],

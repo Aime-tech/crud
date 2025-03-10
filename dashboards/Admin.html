@@ -1,20 +1,29 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["user"])){
+    header("Location: login.php");
+    die();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard Design | By Code Info</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="/asset/css/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Days+One&family=Keania+One&family=Black+Ops+One&family=Fredericka+the+Great&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="stylesheet" href="/asset/css/Admin.css">
 </head>
 <body>
     <div class="sidebar">
 <br>
     <ul class="menu">
-        <div class="my-logo"><img src="/asset/img/family.jpg" alt="logo">
-        </div>
+        <div class="my-logo"></div>
         <li >
             <a href="#">
                 <i class="fa fa-tachometer" aria-hidden="true"></i>
@@ -53,7 +62,7 @@
             </a>
         </li>
         <li class="logout">
-            <a href="logout">
+            <a href="logout.php">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span>Logout</span>
             </a>
@@ -68,48 +77,85 @@
                 <button class="searchBtn">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
-            </div>
-                <span>Home</span>
+            </div class="home-btn">
+                <a href="#">Home</a>
             <div class="user--info">
              <div class="nitif-box">
                 <i class="fa fa-bell-o" aria-hidden="true" style="cursor: pointer;">
-                    <span class="spaner">3</span>
+                    <span class="spaner">99+</span>
                 </i>
             </div>
-                <img src="/asset/img/icon/bxs-user.svg" alt="profile">
+                <img src="/asset/img/Frankilne.png" alt="profile" style="transform: scale(1.7);">
             </div>
     </div>
 
-  <!-- ***** tabular section 1 ***** -->
-    <div class="tabular-wrapper">
-        <!-- <?php
+
+  <!-- **** tabular section 2 ****   -->
+  <div class="tabular-wrapper2">
+    <div class="main-title2">
+        <div class="profile-div">
+            <div class="profile-div-img">
+                <!-- <img src="/asset/img/boo.jfif" alt="profile"> -->
+                 <button class="fa fa-pencil-square-o" id="btn-profile"></button>
+            </div>
+            <div class="change-profile-div">
+                <h6>My Profile</h6>
+                <button class="btn-change">Change photo</button>
+            </div>
+        </div>
+            <div class="profile-info">
+                <ul>
+                    <li>Name: <?php echo $_SESSION["user"]["username"]; ?></li>
+                    <li>Email: <?php echo $_SESSION["user"]["email"]; ?></li>
+                    <li>Gender: <?php echo $_SESSION["user"]["gender"]; ?></li>
+                    <li>Address: <?php echo $_SESSION["user"]["address"]; ?></li>
+                    <li>Phone: <?php echo $_SESSION["user"]["phone"]; ?></li>
+                </ul>
+                <button class="button">Edit info</button>
+                <h5></h5>
+                <p></p>
+            </div>
+        <!-- <?php echo "Hello world."; ?>
+        <br><a href="logout.php">Logout</a>
+        -->
+    </div>
+  </div>
+  <!-- ***** End of tabular section 2 ***** -->
+
+
+
+
+  <!-- ***** tabular section 3 ***** -->
+    <div class="tabular-wrapper3">
+        <!--<?php
         if(isset($_SESSION["msg"]) && !empty($_SESSION["msg"])){
            $msg = $_SESSION["msg"];
            echo "<div class='msgbox alert alert-success p-1 text-center m-0' style='background-color:#9bffbbfa; width: 300px; heigth: 30px;'>".$msg."</div>";
            unset($_SESSION['msg']);
         }
        ?> -->
-       <div class="main-title">
-            <h3>ADD DATA</h3>
+
+       <div class="main-title3">
+            <h3>GRADUATES</h3>
             <button type="button" class="fa fa-plus"></button>
        </div>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">User Name</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">field of study</th>
-                        <th scope="col">Internship Type</th>
-                        <th scope="col">Internship Name</th>
-                        <th scope="col">Internship lacation</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Action</th>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>field of study</th>
+                        <th>Internship Type</th>
+                        <th>Internship Name</th>
+                        <th>Internship lacation</th>
+                        <th>Start Date</th>
+                        <th>Password</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -127,8 +173,8 @@
                         <td>10th</td>
                         <td>Password</td>
                         <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button class="fa fa-edit" style="background: #3ada3a;"></button>
+                            <button class="fa fa-trash-o" style="background: red;"></button>
                         </td>
                     </tr> 
                 </tbody>
@@ -167,8 +213,145 @@
             </table>
         </div>
     </div>
-  <!-- ***** tabular section 1 ***** -->
+  <!-- ***** End of tabular section 3 ***** -->
 
+
+
+
+
+    <!-- ***** tabular section 4 ***** -->
+    <div class="tabular-wrapper4">
+        <!--<?php
+        if(isset($_SESSION["msg"]) && !empty($_SESSION["msg"])){
+           $msg = $_SESSION["msg"];
+           echo "<div class='msgbox alert alert-success p-1 text-center m-0' style='background-color:#9bffbbfa; width: 300px; heigth: 30px;'>".$msg."</div>";
+           unset($_SESSION['msg']);
+        }
+       ?> -->
+
+       <div class="main-title4">
+            <h3>UNDERGRADUATE</h3>
+            <button type="button" class="fa fa-plus"></button>
+       </div>
+        <div class="table-container4">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>field of study</th>
+                        <th>Internship Type</th>
+                        <th>Internship Name</th>
+                        <th>Internship lacation</th>
+                        <th>Start Date</th>
+                        <th>Password</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aime</td>
+                        <td>673182859</td>
+                        <td>MysternoAime@gmail.com</td>
+                        <td>Male</td>
+                        <td>Damas</td>
+                        <td>Software Engineering</td>
+                        <td>professional</td>
+                        <td>Nextbyte Tech</td>
+                        <td>Yaounde</td>
+                        <td>10th</td>
+                        <td>Password</td>
+                        <td>
+                            <button class="fa fa-edit" style="background: #3ada3a;"></button>
+                            <button class="fa fa-trash-o" style="background: red;"></button>
+                        </td>
+                    </tr> 
+                </tbody>
+                
+            <?php
+                if($query_run as $row)
+                {
+                     foreach ($professionals as $professional)
+                  {
+            ?>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['fname']; ?></td>
+                            <td><?php echo $row['lname']; ?></td>
+                            <td><?php echo $row['phone']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['address']; ?></td>
+                            <td><?php echo $row['field_of_study']; ?></td>
+                            <td><?php echo $row['intern_location']; ?></td>
+                            <td><?php echo $row['intern_name']; ?></td>
+                            <td><?php echo $row['startdate']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td>here</td>
+                        </tr>
+                    </tbody>
+            <?php
+                }
+            }   
+            else
+            {
+                echo "No record found Available";
+            }
+            ?>
+            </table>
+        </div>
     </div>
+  <!-- ***** End of tabular section 4 ***** -->
+
+
+
+
+
+<!-- **** tabular section 5 ****   -->
+<div class="tabular-wrapper5">
+<div class="main-title5">
+    <div class="graph-div">
+        <h3>STATISTICS</h3>
+        <div>
+            <canvas id="myChart"></canvas>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            
+            <script>
+            new Chart(document.getElementById('myChart'), {
+                type: 'bar',
+                data: {
+                labels: ['Very good', 'Excellent', 'Fair', 'Average', 'Disliked', 'Good'],
+                datasets: [{
+                    label: 'Service Ratings',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+            </script>
+    </div>
+  </div>
+ </div>
+ <!-- ***** End of tabular section 5 ***** -->
+
+  </div>
+ </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<script src="/asset/js/Admin.js"></script>
 </html>

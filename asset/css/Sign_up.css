@@ -51,39 +51,35 @@ body{
   .nav-list{
     width: 60%;
     height: 100%;
+    display: inline-block;
   }
 
   .home-div{
-    height: 80%;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 10px;
-    align-items: center;
-    border: none;
-    margin-top: 12px;
-    margin-left: 20px;
-    border-color: none;
-    background-color: #faf7f7;
-    justify-content: center;
+    height: 100%;
+    width: 400px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
     
   }
 
   .nav-list .home-div a{
-    font-size: 20px;
+    height: 100%;
+    width: 110px;
+    cursor: pointer;
+    display: block;
+    font-size: 19px;
     font-weight: bolder;
-    align-self: center;
+    line-height: 90px;
+    column-gap: 58px;
+    flex-wrap: wrap;
     text-decoration: none;
     transition: all 0.7s ease-in-out;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Days one', serif;
   }
 
   .nav-list .home-div a:hover{
     color: #c13584;
-  }
-
-  .home-div:hover{
-    transform: translateY(-20%);
-    transition: all 0.7s ease-in-out;
   }
 
  /* End Navigation bar*/
@@ -228,6 +224,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.select-containe label{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .select-container select{
