@@ -194,6 +194,33 @@ body{
 }
 /* ** End of Navigation bar section ** */
 
+
+/* ***** tabular section 1 ***** */
+.tabular-wrapper1{
+    height: 460px;
+    background: #ffffff;
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px;
+    padding: 1.7rem 1.4rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+.main-title1{
+    height: 400px;
+    width: 100%;
+    padding: 0.9rem 0.7rem 1rem 0.7rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.089);
+}
+
+.main-title1 h3{
+    margin: 8px;
+    font-family: 'Days One', sans-serif;
+}
+
+/* ***** End of tabular section 1 ***** */
+
+
+
 /* ***** tabular section 2 ***** */
 .tabular-wrapper2{
     height: 460px;
@@ -279,30 +306,26 @@ body{
 .profile-info{
     height: 230px;
     width: 100%;
-    bottom: 0;
     padding: 7px 2px 4px 2px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 .profile-info ul{
-    height: 100px;
+    height: 67%;
     width: 100%;
     list-style: none;
 }
 .profile-info ul li{
     padding: 7px 5px;
     font-family: 'Days One', sans-serif;
-    line-height: 8px;
-    margin: 11px -20px;
+    line-height: 9px;
+    margin: 9px 12px 4px -19px;
     font-weight: 500;
     color: #3b3c3c;
 }
 .profile-info button{
-    transform: translateY(145%);
     border-radius: 9px;
     padding: 8px 13px;
-    margin-right: 10px;
-    align-self: self-end;
+    justify-content: flex;
     color: #fff;
     background-color: #2d89fb;
 }
@@ -497,8 +520,85 @@ tr:nth-child(even){
 
 
 
-/* 
-i need a js code for which when i click on this
- button element, it can upload and change the background image of the div class ".profile-div-img" and even if the w
-eb page is refreshed, it doesn't affect that background image 
-*/
+/* ***** tabular section 6 ***** */
+.tabular-wrapper6{
+    height: 500px;
+    background: #ffffff;
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px;
+    padding: 1.6rem 1.6rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+.main-title6{
+    height: 450px;
+    width: 100%;
+    display: flex;
+    padding: 0.7rem 0.5rem 0.8rem 0.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.089);
+}
+
+.setting-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    padding: 40px 0 0 50px;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+.setting-box button{
+    color: #fff;
+    background: #006CF4;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.setting-box button:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+.setting-box1, .setting-box2,
+ .setting-box3, .setting-box4, .setting-box5{
+    width: 230px;
+    height: 150px;
+    border-radius: 10%;
+    margin: 10px 0 10px 0;
+    padding: 7px;
+    display: flex;
+    cursor: pointer;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.089);
+    transition: all 0.5s ease-in;
+}
+.setting-box div h5{
+    font-family: 'Days One', sans-serif;
+    font-size: 1.3rem;
+    color: #3b3c3c;
+    margin: 0 0 0 10px;
+}
+.setting-div h3{
+    font-family: 'Days One', sans-serif;
+    font-size: 1.7rem;
+    color: #3b3c3c;
+    margin: 0 0 0 10px;
+}
+.setting-box div:hover{
+    transform: scale(1.1) translateY(-7px);
+    transition: all 0.4s ease-in-out;
+}
+
+/* ***** End of tabular section 6 ***** */
+
+
+
+/* i need a js code for which when i click on the element of id "#dashboard", it should remove or hide the elements of class ".tabular-wrapper2, .tabular-wrapper3, .tabular-wrapper4, .tabular-wrapper5 and .tabular-wrapper6).
+also, when i click on the element of id "#profile", it should remove or hide the elements of class ".tabular-wrapper1, .tabular-wrapper3, .tabular-wrapper4, .tabular-wrapper5 and .tabular-wrapper6).
+also, when i click on the element of id "#graduate", it should remove or hide the elements of class ".tabular-wrapper1, .tabular-wrapper2, .tabular-wrapper4, .tabular-wrapper5 and .tabular-wrapper6).
+also, when i click on the element of id "#undergraduate", it should remove or hide the elements of class ".tabular-wrapper1, .tabular-wrapper2, .tabular-wrapper3, .tabular-wrapper5 and .tabular-wrapper6).
+also, when i click on the element of id "#statistics", it should remove or hide the elements of class ".tabular-wrapper1, .tabular-wrapper2, .tabular-wrapper3, .tabular-wrapper4 and .tabular-wrapper6).
+also, when i click on the element of id "#settings", it should remove or hide the elements of class ".tabular-wrapper1, .tabular-wrapper2, .tabular-wrapper3, .tabular-wrapper4 and .tabular-wrapper5).
+also when i refresh the page, it does not affect it */

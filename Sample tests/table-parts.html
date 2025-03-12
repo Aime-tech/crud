@@ -140,3 +140,240 @@
 </select>
 </body>
 </html>
+
+
+
+
+
+
+<!-- Example of code to hide some specific elements 
+when a button is clicked. -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Tabular Example</title>
+</head>
+<body>
+  <button id="dashboard">Dashboard</button>
+  <button id="profile">Profile</button>
+  <button id="graduate">Graduate</button>
+  <button id="undergraduate">Undergraduate</button>
+  <button id="statistics">Statistics</button>
+  <button id="settings">Settings</button>
+
+  <div class="tabular-wrapper1">Tabular 1</div>
+  <div class="tabular-wrapper2">Tabular 2</div>
+  <div class="tabular-wrapper3">Tabular 3</div>
+  <div class="tabular-wrapper4">Tabular 4</div>
+  <div class="tabular-wrapper5">Tabular 5</div>
+  <div class="tabular-wrapper6">Tabular 6</div>
+
+  <script>
+    // Paste the JavaScript code here
+    const hideElements = (selectors) => {
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          el.style.display = 'none';
+        });
+      });
+    };
+
+    const showAllElements = () => {
+      const allTabularWrappers = document.querySelectorAll('[class^="tabular-wrapper"]');
+      allTabularWrappers.forEach(el => {
+        el.style.display = '';
+      });
+    };
+
+    const dashboardButton = document.querySelector('#dashboard');
+    const profileButton = document.querySelector('#profile');
+    const graduateButton = document.querySelector('#graduate');
+    const undergraduateButton = document.querySelector('#undergraduate');
+    const statisticsButton = document.querySelector('#statistics');
+    const settingsButton = document.querySelector('#settings');
+
+    if (dashboardButton) {
+      dashboardButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+      });
+    }
+
+    if (profileButton) {
+      profileButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper1', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+      });
+    }
+
+    if (graduateButton) {
+      graduateButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+      });
+    }
+
+    if (undergraduateButton) {
+      undergraduateButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper5', '.tabular-wrapper6']);
+      });
+    }
+
+    if (statisticsButton) {
+      statisticsButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper6']);
+      });
+    }
+
+    if (settingsButton) {
+      settingsButton.addEventListener('click', () => {
+        showAllElements();
+        hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5']);
+      });
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- //My code to hide or show elements of my dashboard on click
+
+const data = {};
+const hideElements = (selectors) => {
+  selectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+      el.style.display = 'none';
+    });
+  });
+};
+
+const showAllElements = () => {
+  const allTabularWrappers = document.querySelectorAll('[class^="tabular-wrapper"]');
+  allTabularWrappers.forEach(el => {
+    el.style.display = '';
+  });
+};
+
+const dashboardButton = document.querySelector('#dashboard');
+const profileButton = document.querySelector('#profile');
+const graduateButton = document.querySelector('#graduate');
+const undergraduateButton = document.querySelector('#undergraduate');
+const statisticsButton = document.querySelector('#statistics');
+const settingsButton = document.querySelector('#settings');
+
+if (dashboardButton) {
+  dashboardButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (profileButton) {
+  profileButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (graduateButton) {
+  graduateButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (undergraduateButton) {
+  undergraduateButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (statisticsButton) {
+  statisticsButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper6']);
+  });
+}
+
+if (settingsButton) {
+  settingsButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5']);
+  });
+}
+data.jsCode = `
+const hideElements = (selectors) => {
+  selectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+      el.style.display = 'none';
+    });
+  });
+};
+
+const showAllElements = () => {
+  const allTabularWrappers = document.querySelectorAll('[class^="tabular-wrapper"]');
+  allTabularWrappers.forEach(el => {
+    el.style.display = '';
+  });
+};
+
+const dashboardButton = document.querySelector('#dashboard');
+const profileButton = document.querySelector('#profile');
+const graduateButton = document.querySelector('#graduate');
+const undergraduateButton = document.querySelector('#undergraduate');
+const statisticsButton = document.querySelector('#statistics');
+const settingsButton = document.querySelector('#settings');
+
+if (dashboardButton) {
+  dashboardButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (profileButton) {
+  profileButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (graduateButton) {
+  graduateButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (undergraduateButton) {
+  undergraduateButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper5', '.tabular-wrapper6']);
+  });
+}
+
+if (statisticsButton) {
+  statisticsButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper6']);
+  });
+}
+
+if (settingsButton) {
+  settingsButton.addEventListener('click', () => {
+    showAllElements();
+    hideElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5']);
+  });
+}
+`; -->

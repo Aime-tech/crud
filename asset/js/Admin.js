@@ -1,3 +1,96 @@
+// //My code to hide or show elements of my dashboard on click
+function hideElements(elements) {
+      elements.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.style.display = 'none';
+        }
+      });
+    }
+
+    function showElements(elements) {
+      elements.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.style.display = '';
+        }
+      });
+    }
+
+    function handleNavigationClick(clickedId) {
+      let elementsToHide = [];
+
+      switch (clickedId) {
+        case 'dashboard':
+          elementsToHide = ['.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6'];
+          break;
+        case 'profile':
+          elementsToHide = ['.tabular-wrapper1', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6'];
+          break;
+        case 'graduate':
+          elementsToHide = ['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6'];
+          break;
+        case 'undergraduate':
+          elementsToHide = ['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper5', '.tabular-wrapper6'];
+          break;
+        case 'statistics':
+          elementsToHide = ['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper6'];
+          break;
+        case 'settings':
+          elementsToHide = ['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5'];
+          break;
+      }
+
+      // Show all elements before hiding the selected ones
+      showElements(['.tabular-wrapper1', '.tabular-wrapper2', '.tabular-wrapper3', '.tabular-wrapper4', '.tabular-wrapper5', '.tabular-wrapper6']);
+      hideElements(elementsToHide);
+
+      // Store the current state in localStorage
+      localStorage.setItem('hiddenElements', JSON.stringify(elementsToHide));
+      localStorage.setItem('lastClicked', clickedId);
+    }
+
+    // Add event listeners to navigation items after the DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const dashboard = document.getElementById('dashboard');
+      const profile = document.getElementById('profile');
+      const graduate = document.getElementById('graduate');
+      const undergraduate = document.getElementById('undergraduate');
+      const statistics = document.getElementById('statistics');
+      const settings = document.getElementById('settings');
+
+      if (dashboard) dashboard.addEventListener('click', () => handleNavigationClick('dashboard'));
+      if (profile) profile.addEventListener('click', () => handleNavigationClick('profile'));
+      if (graduate) graduate.addEventListener('click', () => handleNavigationClick('graduate'));
+      if (undergraduate) undergraduate.addEventListener('click', () => handleNavigationClick('undergraduate'));
+      if (statistics) statistics.addEventListener('click', () => handleNavigationClick('statistics'));
+      if (settings) settings.addEventListener('click', () => handleNavigationClick('settings'));
+
+      // On page load, check if there's a stored state
+      const hiddenElements = JSON.parse(localStorage.getItem('hiddenElements'));
+      const lastClicked = localStorage.getItem('lastClicked');
+      if (hiddenElements) {
+        hideElements(hiddenElements);
+      }
+    });
+    
+    // Add event listeners directly
+    const dashboard = document.getElementById('dashboard');
+    const profile = document.getElementById('profile');
+    const graduate = document.getElementById('graduate');
+    const undergraduate = document.getElementById('undergraduate');
+    const statistics = document.getElementById('statistics');
+    const settings = document.getElementById('settings');
+
+    if (dashboard) dashboard.addEventListener('click', () => handleNavigationClick('dashboard'));
+    if (profile) profile.addEventListener('click', () => handleNavigationClick('profile'));
+    if (graduate) graduate.addEventListener('click', () => handleNavigationClick('graduate'));
+    if (undergraduate) undergraduate.addEventListener('click', () => handleNavigationClick('undergraduate'));
+    if (statistics) statistics.addEventListener('click', () => handleNavigationClick('statistics'));
+    if (settings) settings.addEventListener('click', () => handleNavigationClick('settings'));
+
+    
+
 
 // Code for btn-profile (profile-div-img)
 const button = document.getElementById('btn-profile');
